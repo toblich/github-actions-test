@@ -1,0 +1,19 @@
+{
+  "name": "github-actions-test",
+  "version": "1.0.0",
+  "description": "A repo for me to test stuff with GitHub Actions - Do not judge me for messy experiments here ;)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toblich/github-actions-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toblich/github-actions-test/issues"
+  },
+  "homepage": "https://github.com/toblich/github-actions-test#readme"
+}
