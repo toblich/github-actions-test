@@ -1,0 +1,27 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+    
+env:
+  # These are just test values to try out this action on the same PR that enables it 
+  days-before-stale: 0
+  days-before-close: 0
+  stale-label: 'stale'
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/stale@v1
+      id: stale
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-pr-message: |
+          This has had no activity for ${{ env.days-before-stale }} days.
+          Remove the "${{ env.stale-label }}" label or push/comment in the next ${{ env.days-before-close }} days or this will be auto-closed.
+        stale-pr-label: ${{ env.stale-label }}
+        days-before-stale: ${{ env.days-before-stale }}
